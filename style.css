@@ -1,0 +1,102 @@
+/* 전체 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#navbar {
+  display: flex;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#toggleBtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+/* 섹션 스타일 */
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  header h1 {
+      flex: 1; /* 로고 영역이 차지하는 너비를 1로 설정 */
+  }
+
+  #navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      display: none;
+  }
+
+  #toggleBtn {
+      display: block; /* 토글 버튼 표시 */
+  }
+
+  main {
+      margin-top: 50px; /* 메뉴 영역을 비우기 위해 추가 */
+  }
+
+  footer {
+      margin-top: 50px; /* 메뉴 영역과 겹치지 않도록 추가 */
+  }
+
+  header.open #navbar {
+      display: flex; /* 토글 버튼 클릭 시 메뉴 표시 */
+      flex-direction: column; /* 세로로 정렬 */
+      align-items: flex-start; /* 좌측 정렬 */
+  }
+}
