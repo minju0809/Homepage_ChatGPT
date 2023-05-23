@@ -1,77 +1,57 @@
-// // 토글 버튼 클릭 시 네비게이션 바 열고 닫기
-// document.getElementById("toggleBtn").addEventListener("click", function() {
-//   var navbar = document.getElementById("navbar");
-//   navbar.classList.toggle("open");
-// });
-
-// 토글 버튼 클릭 시 네비게이션 바 열고 닫기
-document.getElementById("toggleBtn").addEventListener("click", function() {
-  var navbar = document.getElementById("navbar");
-  navbar.classList.toggle("open");
-
-  var isNavOpen = navbar.classList.contains("open");
-  if (isNavOpen) {
-      navbar.style.display = "flex";
-  } else {
-      navbar.style.display = "none";
-  }
-});
-
-// 화면 크기 변경 시 토글 버튼 표시 여부 확인
-window.addEventListener("resize", function() {
+document.addEventListener("DOMContentLoaded", function () {
   var toggleBtn = document.getElementById("toggleBtn");
-  var navbar = document.getElementById("navbar");
-  var logo = document.getElementById("logo");
+  var body = document.querySelector("body");
 
-  if (window.innerWidth <= 768) {
-      toggleBtn.style.display = "block";
-      var isNavOpen = navbar.classList.contains("open");
-      if (isNavOpen) {
-          navbar.style.display = "flex";
-      } else {
-          navbar.style.display = "none";
-      }
-      logo.style.flex = "1";
-  } else {
-      toggleBtn.style.display = "none";
-      navbar.style.display = "flex";
-      logo.style.flex = "auto";
-  }
-});
-
-// 초기 로딩 시 토글 버튼 표시 여부 확인
-window.addEventListener("DOMContentLoaded", function() {
-  var toggleBtn = document.getElementById("toggleBtn");
-  var navbar = document.getElementById("navbar");
-  var logo = document.getElementById("logo");
-
-  if (window.innerWidth <= 768) {
-      toggleBtn.style.display = "block";
-      navbar.style.display = "none";
-      logo.style.flex = "1";
-  } else {
-      toggleBtn.style.display = "none";
-      navbar.style.display = "flex";
-      logo.style.flex = "auto";
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  var toggleBtn = document.getElementById("toggleBtn");
-  var header = document.querySelector("header");
-  var nav = document.createElement("nav");
-  nav.id = "navbar";
-  nav.innerHTML = `
-      <ul>
-          <li><a href="#">홈</a></li>
-          <li><a href="#">소개</a></li>
-          <li><a href="#">서비스</a></li>
-          <li><a href="#">문의</a></li>
-      </ul>
-  `;
-  header.appendChild(nav);
-
-  toggleBtn.addEventListener("click", function() {
-      header.classList.toggle("open");
+  toggleBtn.addEventListener("click", function () {
+    body.classList.toggle("open-nav");
   });
+});
+
+// 공지사항 링크 요소 선택
+const noticeLink = document.getElementById("noticeLink");
+// 사진 링크 요소 선택
+const photoLink = document.getElementById("photoLink");
+// 체육관 찾기 링크 요소 선택
+const gymLink = document.getElementById("gymLink");
+// 상점 링크 요소 선택
+const shopLink = document.getElementById("shopLink");
+// 리뷰 링크 요소 선택
+const reviewLink = document.getElementById("reviewLink");
+// 마이페이지 링크 요소 선택
+const myPageLink = document.getElementById("myPageLink");
+
+// 공지사항 클릭 이벤트 핸들러
+noticeLink.addEventListener("click", function () {
+  // 'notice.html' 페이지로 이동
+  window.location.href = "Notice/notice.html";
+});
+
+// 사진 클릭 이벤트 핸들러
+photoLink.addEventListener("click", function () {
+  // 'photo.html' 페이지로 이동
+  window.location.href = "Photo/photo.html";
+});
+
+// 체육관 찾기 클릭 이벤트 핸들러
+gymLink.addEventListener("click", function (event) {
+  event.preventDefault(); // 기본 동작(링크 이동)을 막습니다.
+  window.location.href = "FindGym/findGym.html"; // 이동할 HTML 파일의 경로를 설정합니다.
+});
+
+// 상점 클릭 이벤트 핸들러
+shopLink.addEventListener("click", function (event) {
+  event.preventDefault(); // 기본 동작(링크 이동)을 막습니다.
+  window.location.href = "Shop/shop.html"; // 이동할 HTML 파일의 경로를 설정합니다.
+});
+
+// 리뷰 클릭 이벤트 핸들러
+reviewLink.addEventListener("click", function () {
+  // 'review.html' 페이지로 이동
+  window.location.href = "Review/review.html";
+});
+
+// 마이페이지 클릭 이벤트 핸들러
+myPageLink.addEventListener("click", function () {
+  // 'mypage.html' 페이지로 이동
+  window.location.href = "MyPage/myPage.html";
 });

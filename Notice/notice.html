@@ -1,0 +1,13 @@
+<button id="goBackButton">뒤로가기</button>
+공지사항
+
+<script>
+  // 뒤로가기 버튼 요소 선택
+  const goBackButton = document.getElementById('goBackButton');
+
+  // 뒤로가기 버튼 클릭 이벤트 핸들러
+  goBackButton.addEventListener('click', function() {
+    // 이전 페이지로 이동
+    window.history.back();
+  });
+</script>
